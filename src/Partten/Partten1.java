@@ -24,5 +24,6 @@ public class Partten1 {
             System.out.print(result);
             System.out.println();
         }
+        input.close();
     }
 }
