@@ -8,11 +8,11 @@ class Solution {
          for(int i=1;i<intervals.length;i++){
             
             System.out.println(end);
-            if((intervals[i][0]<end)){
-                count++;
+            if((intervals[i][0]>=end)){
+                end=intervals[i][1];
             }
             else{
-                end=intervals[i][1];
+                count++;
             }
          }
 
