@@ -1,14 +1,19 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        List<Integer> index = new ArrayList<>();
+        // Arrays.sort(nums);
+        Map<Integer,Integer> m = new HashMap<>();
+        int startIndex = 0;
+        int endIndex = 0;
         for(int i=0;i<nums.length;i++){
-            int complite= target - nums[i];
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[j] == complite){
-                    return new int[]{i,j};
-                }
+            int findValue = target - nums[i];
+            if(m.containsKey(findValue)){
+                startIndex = m.get(findValue);
+                endIndex = i;
+            }
+            else{
+                m.put(nums[i],i);
             }
         }
-        return new int[]{};
+        return new int[]{startIndex,endIndex};
     }
 }
