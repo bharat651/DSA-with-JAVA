@@ -1,6 +1,6 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // Arrays.sort(nums);
+        int[] sortedArray = nums.clone();
         Map<Integer,Integer> m = new HashMap<>();
         int startIndex = 0;
         int endIndex = 0;
